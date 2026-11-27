@@ -10,12 +10,11 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/MainView.fxml"));
-        stage.setTitle("Employee Management System");
-        stage.setScene(new Scene(root, 600, 400));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
+        stage.setTitle("Login");
+        stage.setScene(new Scene(root, 900, 600));
         stage.show();
     }
-
     public static void main(String[] args) {
         launch(args);
     }
