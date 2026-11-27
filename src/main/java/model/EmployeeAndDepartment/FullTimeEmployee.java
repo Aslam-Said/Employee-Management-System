@@ -4,29 +4,19 @@ public class FullTimeEmployee extends Employee{
     private int MonthlySalary;
     private int MonthlyBonus;
 
-    private FullTimeEmployee(double salary, gender Gender, type Type, int age, Departments department,
+    public FullTimeEmployee(double salary, gender Gender, type Type, int age, Departments department,
                             String name, int monthlyBonus, int monthlySalary) {
         super(salary, Gender, Type, age, department, name);
         if(MonthlySalary<=0)
-            throw new IllegalArgumentException("Invaild Monthly salary");
+            throw new IllegalArgumentException("Invalid Monthly salary: it must be greater than zero");
         else
             MonthlyBonus = monthlyBonus;
         if(MonthlyBonus<=0)
-            throw new IllegalArgumentException("Invaild Monthly Bonus");
+            throw new IllegalArgumentException("Invalid Monthly Bonus :it must be greater than zero");
         else
             MonthlySalary = monthlySalary;
     }
-    public FullTimeEmployee createFullTimeEmployee(double salary, gender Gender, type Type, int age, Departments department,
-                                                   String name, int monthlyBonus, int monthlySalary){
-        try {
-            return new FullTimeEmployee( salary,  Gender, Type,  age, department,
-                     name, monthlyBonus, monthlySalary);
-        }
-        catch (IllegalArgumentException e){
-            System.out.println("Invaild because :  "+e.getMessage());
-            return null;
-        }
-    }
+
 
     public int getMonthlySalary() {
         return MonthlySalary;
@@ -51,17 +41,8 @@ public class FullTimeEmployee extends Employee{
         return true;
     }
 
-    public boolean updateSalary(){
-        System.out.println("Enter the new Monthly Salary: ");
-        Scanner scanner=new Scanner(System.in);
-        int x=scanner.nextInt();
-        System.out.println("Eneter the new Monthly Bonus: ");
-        int y=scanner.nextInt();
-        boolean check=setMonthlySalary(x);
-        boolean check2=setMonthlyBonus(y);
-        if(!check||!check2){
-            return false;
-        }
+    public boolean updateSalary(int monthlySalary,int monthlyBonus){
+        this.setSalary(this.MonthlySalary+this.MonthlyBonus);
         return true;
     }
 }

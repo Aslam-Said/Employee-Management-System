@@ -31,7 +31,7 @@ public abstract class Employee {
     public Employee(double salary, gender gender, type Type,
                     int age, Departments department, String name) {
         if(salary<=0){
-            throw new IllegalArgumentException("Invaild Salary");
+            throw new IllegalArgumentException("Invaild Salary : it must be greater than zero");
         }
         else
             this.Salary=salary;
@@ -41,7 +41,7 @@ public abstract class Employee {
         this.Type = Type;
 
         if(age<=0) {
-            throw new IllegalArgumentException("Invaild Age");
+            throw new IllegalArgumentException("Invaild Age : it must be greater than zero");
         }
         else
             this.Age=age;
@@ -93,7 +93,6 @@ public abstract class Employee {
 
     public boolean setDepartment(Departments department) {
         if(department==null){
-            System.out.println("Invaild Department");
             return false;
         }
         Department = department;
@@ -102,7 +101,6 @@ public abstract class Employee {
 
     public boolean setAge(int age) {
         if(age<=0){
-            System.out.println("Invaild Age");
             return false;
         }
         Age = age;
@@ -115,14 +113,13 @@ public abstract class Employee {
 
     public boolean setSalary(double salary) {
         if(salary<=0){
-            System.out.println("Invaild Salary");
             return false;
         }
         Salary = salary;
         return true;
     }
 
-    public abstract boolean updateSalary();
+    public abstract boolean updateSalary(int x,int y);
 
 
 }
