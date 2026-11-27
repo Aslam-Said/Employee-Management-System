@@ -1,8 +1,8 @@
 package model.EmployeeAndDepartment;
 import java.util.Scanner;
 public class FullTimeEmployee extends Employee{
-    private int MonthlySalary;
-    private int MonthlyBonus;
+    private double MonthlySalary;
+    private double MonthlyBonus;
 
     public FullTimeEmployee(double salary, gender Gender, type Type, int age, Departments department,
                             String name, int monthlyBonus, int monthlySalary) {

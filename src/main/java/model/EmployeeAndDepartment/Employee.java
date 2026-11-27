@@ -111,14 +111,6 @@ public abstract class Employee {
         this.Type = Type;
     }
 
-    public boolean setSalary(double salary) {
-        if(salary<=0){
-            return false;
-        }
-        Salary = salary;
-        return true;
-    }
-
     public abstract boolean updateSalary(int x,int y);
 
 
