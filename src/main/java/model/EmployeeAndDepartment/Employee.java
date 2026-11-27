@@ -31,7 +31,7 @@ public abstract class Employee {
     public Employee(double salary, gender gender, type Type,
                     int age, Departments department, String name) {
         if(salary<=0){
-            throw new IllegalArgumentException("Invaild Salary");
+            throw new IllegalArgumentException("Invaild Salary : it must be greater than zero");
         }
         else
             this.Salary=salary;
@@ -41,7 +41,7 @@ public abstract class Employee {
         this.Type = Type;
 
         if(age<=0) {
-            throw new IllegalArgumentException("Invaild Age");
+            throw new IllegalArgumentException("Invaild Age : it must be greater than zero");
         }
         else
             this.Age=age;
