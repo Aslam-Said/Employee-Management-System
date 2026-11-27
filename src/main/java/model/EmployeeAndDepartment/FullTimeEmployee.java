@@ -18,11 +18,11 @@ public class FullTimeEmployee extends Employee{
     }
 
 
-    public int getMonthlySalary() {
+    public double getMonthlySalary() {
         return MonthlySalary;
     }
 
-    public int getMonthlyBonus() {
+    public double getMonthlyBonus() {
         return MonthlyBonus;
     }
 
