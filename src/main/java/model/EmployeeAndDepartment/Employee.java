@@ -91,7 +91,7 @@ public abstract class Employee {
         Name = name;
     }
 
-    public boolean setDepartment(Departments department) {
+    public Boolean setDepartment(Departments department) {
         if(department==null){
             return false;
         }
@@ -99,7 +99,7 @@ public abstract class Employee {
         return true;
     }
 
-    public boolean setAge(int age) {
+    public Boolean setAge(int age) {
         if(age<=0){
             return false;
         }
@@ -111,7 +111,7 @@ public abstract class Employee {
         this.Type = Type;
     }
 
-    public boolean setSalary(double salary) {
+    public Boolean setSalary(double salary) {
         if(salary<=0){
             return false;
         }
@@ -119,7 +119,7 @@ public abstract class Employee {
         return true;
     }
 
-    public abstract boolean updateSalary(int x,int y);
+    public abstract Boolean updateSalary(double x,double y);
 
 
 }

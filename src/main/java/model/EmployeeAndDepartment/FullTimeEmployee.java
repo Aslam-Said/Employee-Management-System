@@ -26,7 +26,7 @@ public class FullTimeEmployee extends Employee{
         return MonthlyBonus;
     }
 
-    public boolean setMonthlySalary(int monthlySalary) {
+    public Boolean setMonthlySalary(int monthlySalary) {
         if(monthlySalary<=0)
             return false;
 
@@ -34,14 +34,14 @@ public class FullTimeEmployee extends Employee{
         return true;
     }
 
-    public boolean setMonthlyBonus(int monthlyBonus) {
+    public Boolean setMonthlyBonus(int monthlyBonus) {
         if(monthlyBonus<=0)
             return false;
         MonthlyBonus = monthlyBonus;
         return true;
     }
 
-    public boolean updateSalary(int monthlySalary,int monthlyBonus){
+    public Boolean updateSalary(double monthlySalary,double monthlyBonus){
         this.setSalary(this.MonthlySalary+this.MonthlyBonus);
         return true;
     }
