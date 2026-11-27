@@ -14,13 +14,13 @@ public class Connection {
     private final Path databaseFile;
     private final ObjectMapper mapper;
 
-    public Connection() throws IOException {
+    public Connection(String Filename) throws IOException {
 
         this.mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
         Path folder = Path.of("data");
 
-        this.databaseFile = Path.of("data").resolve("employees.json");
+        this.databaseFile = folder.resolve(Filename+".json");
 
         if(Files.notExists(databaseFile)){
             write(new ArrayList<>());
@@ -28,14 +28,23 @@ public class Connection {
 
     }
 
-    public ArrayList<Employee> read() throws IOException {
+    public ArrayList<Employee> readEmployees() throws IOException {
         if (Files.notExists(databaseFile) || Files.size(databaseFile) == 0) {
             return new ArrayList<>();
         }
         return mapper.readValue(databaseFile.toFile(), new TypeReference<ArrayList<Employee>>() {});
     }
 
+    public ArrayList<Account> readUsers()throws IOException{
+        if (Files.notExists(databaseFile) || Files.size(databaseFile) == 0) {
+            return new ArrayList<>();
+        }
+
+        return mapper.readValue(databaseFile.toFile(), new TypeReference<ArrayList<Account>>() {});
+    }
+
     public void write(ArrayList<Employee> employees) throws IOException {
         mapper.writeValue(databaseFile.toFile(), employees);
     }
+
 }
